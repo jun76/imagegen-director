@@ -1,0 +1,13 @@
+# Library axis: composition. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Placement of the subject in the frame.
+notes: '"buried in clutter" with many objects can turn into a dense mass; keep it sparse for sensitive
+  subjects.'
+values:
+  centered: 3
+  rule of thirds: 3
+  small subject with large empty space: 2
+  cropped by the frame: 2
+  seen through a foreground gap: 2
+  symmetrical: 1
+  buried in clutter: 2

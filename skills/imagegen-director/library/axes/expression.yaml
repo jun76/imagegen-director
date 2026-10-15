@@ -1,0 +1,14 @@
+# Library axis: expression. Copy into a project's axes.yaml and adapt values and weights.
+description: Facial expression of a character.
+notes: For character sets. Avoid extreme distress unless the use case needs it.
+values:
+  neutral: 3
+  gentle smile: 3
+  big laugh: 1
+  surprised: 1
+  angry: 1
+  sad: 1
+  determined: 1
+  embarrassed: 1
+  sleepy: 1
+  smug: 1

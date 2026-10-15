@@ -1,0 +1,15 @@
+# Library axis: era. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Historical era.
+notes: 'Same as region. Contradictions (ancient x office meeting) are absorbed by the writer: elders in
+  council.'
+values:
+  prehistoric: 1
+  ancient: 1
+  medieval: 1
+  early modern: 1
+  19th century: 1
+  early 20th century: 1
+  late 20th century: 2
+  present day: 5
+  near future: 1

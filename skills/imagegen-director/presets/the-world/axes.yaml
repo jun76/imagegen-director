@@ -1,0 +1,200 @@
+# Axes of the "the-world" preset. Schema: guides/schema.md.
+# Each axis: values map to relative weights (they need not sum to 100). applies_to lists tags or
+# node names from taxonomy.yaml; the axis is sampled only for leaves under them (all leaves if omitted).
+# Sampling is quota-based rather than purely random (under-used values are favored).
+# The chosen values become image metadata, used for search-evaluation queries and hard negatives.
+
+# Fixed values added to every row (none here: this preset varies everything).
+constants: {}
+
+media:  # medium / image type. Most important, since it maps directly to query types.
+  unique_per_leaf: true   # the 10 variants of a leaf never share a medium
+  weight_note: photographic ~55% / screens and documents ~10% / drawn and CG ~35%
+  values:
+    # photographic
+    DSLR photo: 10
+    smartphone snapshot: 10
+    product photo on white background: 4
+    documentary photo: 5
+    street snapshot: 4
+    security or dashcam still: 2
+    satellite or aerial photo: 2
+    micrograph or scientific image: 3
+    infrared thermal or X-ray image: 2
+    black-and-white or sepia old photo: 4
+    film or instant photo: 3
+    underwater photo: 2
+    # screens and documents
+    screenshot: 3
+    scanned paper document: 3
+    encyclopedia or textbook illustration: 3
+    # drawn and CG
+    oil painting: 3
+    watercolor painting: 3
+    pencil or charcoal drawing: 2
+    pen and ink line drawing: 2
+    ink wash painting: 2
+    ukiyo-e or woodblock print: 2
+    child's drawing: 2
+    anime cel illustration: 3
+    manga panel: 2
+    flat vector illustration: 3
+    pixel art: 2
+    photorealistic 3D render: 3
+    low-poly toy 3D render: 2
+    clay diorama or miniature: 2
+    embroidery textile or stained glass: 2
+
+shot_scale:  # distance to the subject / size in frame
+  values:
+    vast (horizon or starfield): 2
+    wide establishing view: 3
+    full view: 4
+    medium view: 4
+    close-up: 3
+    extreme close-up or macro: 2
+    cropped detail: 2
+
+angle:
+  values:
+    eye level: 5
+    high angle: 2
+    directly overhead: 2
+    low angle: 2
+    side view: 2
+    from behind: 1
+    first-person view: 1
+    tilted or dutch angle: 1
+
+composition:
+  values:
+    centered: 3
+    rule of thirds: 3
+    small subject with large empty space: 2
+    cropped by the frame: 2
+    seen through a foreground gap: 2
+    symmetrical: 1
+    buried in clutter: 2
+
+count:  # number of subjects, for counting-type queries
+  values:
+    single: 5
+    two: 2
+    a few: 2
+    crowd or many: 2
+
+lighting:
+  values:
+    sunny daylight: 4
+    soft overcast light: 3
+    sunrise or sunset: 2
+    blue hour: 1
+    artificial night lighting: 2
+    moonlight or darkness: 1
+    indoor fluorescent light: 2
+    natural window light: 2
+    studio lighting: 2
+    backlight or silhouette: 1
+    direct flash: 1
+    neon or colored light: 1
+    firelight or candlelight: 1
+
+weather:
+  applies_to: [outdoor]
+  values:
+    unspecified (e.g. indoors): 5
+    clear: 3
+    rain: 2
+    snow: 1
+    fog or mist: 1
+    strong wind or dust: 1
+
+season:
+  applies_to: [seasonal]
+  values:
+    unspecified: 4
+    spring: 1
+    summer: 1
+    autumn: 1
+    winter: 1
+
+state:  # state / event. Spreads a subject across its life cycle.
+  values:
+    beginning or birth: 1
+    growing or under construction: 1
+    peak or complete: 3
+    still or at rest: 2
+    in motion: 2
+    interacting with others: 2
+    in use or at work: 2
+    decaying or weathered: 1
+    broken accident or disaster: 1
+    being repaired or maintained: 1
+    death remains or traces: 1
+    transforming: 1
+
+color:
+  values:
+    natural color: 6
+    high saturation: 1
+    muted desaturated: 1
+    monochrome: 1
+    single dominant color: 1
+    pastel: 1
+    dark low-key: 1
+    bright high-key: 1
+
+quality:  # image quality / degradation, for robustness evaluation. Kept as metadata so it can be excluded when used for training.
+  values:
+    clean: 12
+    noise or high ISO: 1
+    camera or motion blur: 1
+    out of focus: 1
+    low resolution or compression artifacts: 1
+    over- or underexposed: 1
+    tilted or rotated: 1
+    partly occluded: 1
+
+region:  # region / culture. Prevents Western or Japanese bias for people, activities and artifacts.
+  applies_to: [cultural]
+  values:
+    East Asia: 1
+    Southeast Asia: 1
+    South Asia: 1
+    Central Asia: 1
+    Middle East: 1
+    North Africa: 1
+    Sub-Saharan Africa: 1
+    Europe: 1
+    North America: 1
+    Latin America: 1
+    Oceania and Pacific Islands: 1
+    Arctic: 1
+
+era:
+  applies_to: [cultural]
+  values:
+    prehistoric: 1
+    ancient: 1
+    medieval: 1
+    early modern: 1
+    19th century: 1
+    early 20th century: 1
+    late 20th century: 2
+    present day: 5
+    near future: 1
+
+# Exclusion rules for obvious contradictions (the minimum, before the prompt-writing LLM's own interpretation)
+exclusions:
+  - {if: {media: product photo on white background}, forbid: [weather, season]}
+  - {if: {media: satellite or aerial photo}, forbid_values: {angle: [low angle, eye level, first-person view, from behind]}}
+  - {if: {media: micrograph or scientific image}, forbid: [weather, season, region, era]}
+  - {if: {media: black-and-white or sepia old photo}, forbid_values: {color: [high saturation, pastel, natural color], era: [near future]}}
+  - {if: {lighting: sunny daylight}, forbid_values: {weather: [rain, snow]}}
+
+# Values that must never appear for certain subjects. Applied after sampling, so all other rows
+# are unaffected. Image models fill the frame edge to edge when asked for many creatures or body
+# parts, whatever the wording, and the result is repulsive.
+subject_remaps:
+  - when: {group: mass-sensitive}
+    remap: {count: {crowd or many: a few}}

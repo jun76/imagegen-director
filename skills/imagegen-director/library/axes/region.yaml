@@ -1,0 +1,18 @@
+# Library axis: region. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Region / culture, against a Western or Japanese default.
+notes: Reflect it in people, clothing, buildings and tools, not as a list of stereotyped symbols. Restrict
+  with applies_to to people, activities and artifacts.
+values:
+  East Asia: 1
+  Southeast Asia: 1
+  South Asia: 1
+  Central Asia: 1
+  Middle East: 1
+  North Africa: 1
+  Sub-Saharan Africa: 1
+  Europe: 1
+  North America: 1
+  Latin America: 1
+  Oceania and Pacific Islands: 1
+  Arctic: 1

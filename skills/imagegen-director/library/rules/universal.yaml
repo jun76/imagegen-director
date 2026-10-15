@@ -1,0 +1,22 @@
+# Rules that hold for every project. scripts/assemble.py checks each prompt against these and the
+# project's rules.yaml, and refuses to write prompts/L4.jsonl while anything is violated.
+# A project can disable or narrow a rule in its rules.yaml under `overrides`.
+# Patterns are case-insensitive Python regular expressions. Schema: guides/schema.md.
+
+rules:
+  - id: no-quality-incantations
+    description: Quality spells make every image look alike.
+    forbid: '\b(masterpiece|best quality|8k|highly detailed|ultra detailed|trending on)\b'
+
+  - id: no-capture-device
+    description: >
+      media is the look of the image, not an object in it. Naming the capture device makes image
+      models draw the device into the picture. Describe the look instead. "camera shake" is a
+      degradation term and stays allowed.
+    forbid: '\b(DSLR|SLR|cameras?(?!\s+shake)|camcorders?|dash ?cams?|CCTV|webcams?|smart ?phones?|phones?|mobile)\b'
+
+  - id: no-dense-mass
+    description: >
+      Wording that makes image models fill the whole frame with repeated objects. A "many" count
+      must read as a group with visible gaps, never a dense mass.
+    forbid: '\b(countless|innumerable|myriad|teeming|swarm(s|ing)?|densely packed|thousands of|hundreds of|carpet of)\b'

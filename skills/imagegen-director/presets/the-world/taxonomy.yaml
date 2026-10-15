@@ -1,0 +1,171 @@
+# Subject tree of the "the-world" preset: 10 top categories, 108 middle categories, 1000 leaves.
+#
+# Schema (see guides/schema.md):
+#   groups: named lists of node names, referenced by axes.yaml and rules.yaml
+#   tree:   nested mapping; a node is either a mapping (children, plus optional _tags / _weight)
+#           or a list of leaf subjects. Leaves are what the sampler varies.
+#
+# Tags used here:
+#   outdoor  -> the weather axis applies
+#   seasonal -> the season axis applies
+#   cultural -> the region and era axes apply (people, activities, artifacts, symbols)
+# _weight is the share (%) of leaves planned for each top category; the sampler ignores it.
+# Guidelines for the leaves:
+# - concrete enough to be a search query and recognizable in an image, yet broad enough to vary
+#   ten ways along the axes; each subject appears in exactly one place
+# - no real people, brands, or named works; people, activities and artifacts spread across cultures
+
+groups:
+  # A mass of these looks repulsive (trypophobia, creepy crawlies, disembodied body parts).
+  # axes.yaml never gives them count "crowd or many"; rules.yaml forbids mass wording for them.
+  mass-sensitive: [microbes and plankton, fungi and lichens, insects and spiders, other invertebrates,
+                   fish, amphibians and reptiles, body parts, lotus, bat]
+  # Subjects that legitimately show a capture device (exception to the no-capture-device rule).
+  device-subjects: [smartphone, smartphone chat screen, digital camera, photography, video call, e-waste]
+
+tree:
+
+  "0_void_and_transcendence":
+    _weight: 4
+    void and emptiness: [endless darkness, empty white space, empty room without furniture, lightless deep-sea darkness, featureless plain stretching to the horizon]
+    origin and creation: [primordial sea of chaos, cosmic egg, moment heaven and earth separate, first light piercing the dark, first life emerging from mud]
+    end and annihilation: [world burning out, frozen doomsday earth, collapsing sky, universe as the last star fades, world drowning in a great flood]
+    infinity and eternity: [endless corridor, infinite reflections between facing mirrors, snake biting its own tail, eternally turning wheel of time, endless desert inside an hourglass]
+    the sacred and the divine: [holy being wrapped in light, light pouring onto an altar, sacred peak piercing the clouds, figure with a halo, empty inner sanctum]
+    death and afterlife: [boat crossing the river of the underworld, soul leaving the body, gates of heaven, hellfire, wheel of rebirth]
+    beyond the universe and multiverse: [multiverse of bubble universes, dimensional rift tearing reality, boundary wall at the edge of the universe, universe seen from outside, overlapping parallel-world city]
+    limits of consciousness: [inner light of a meditating monk, tunnel of light in a near-death experience, moment of enlightenment, shaman in trance, consciousness dissolving into the cosmos]
+
+  "1_cosmos":
+    _weight: 6
+    stars: [solar surface with prominences, red giant star, white dwarf star, blue supergiant, supernova explosion, binary star system, brown dwarf, young star with a protoplanetary disk]
+    planets and moons: [lunar craters, red plains of Mars, great red spot of Jupiter, rings of Saturn, cracked icy moon, cloud-shrouded Venus, earth seen from space, blue Neptune]
+    small bodies: [comet with a tail, irregular asteroid, fireball entering the atmosphere, meteorite on the ground, meteor shower, asteroid belt, comet nucleus, icy dwarf planet]
+    nebulae and interstellar matter: [emission nebula, planetary nebula, dark nebula silhouette, supernova remnant, blue reflection nebula, pillars of star formation, globular cluster, open star cluster]
+    galaxies and large-scale structure: [spiral galaxy, barred spiral galaxy, elliptical galaxy, two colliding galaxies, galaxy cluster, cosmic web of large-scale structure, all-sky map of the cosmic microwave background]
+    extreme objects: [black hole with an accretion disk, relativistic jet, pulsar, magnetar, quasar, Einstein ring from gravitational lensing, star torn apart by a black hole]
+    sky seen from the ground: [sky full of stars, milky way, total solar eclipse, phases of the moon, full moon rising over the horizon, star trails, red total lunar eclipse]
+    human space exploration: [rocket launch, space station, astronaut on a spacewalk, Mars rover, satellite orbiting earth, lunar lander, space telescope]
+
+  "2_matter_and_microscale":
+    _weight: 6
+    particles and quantum: [particle tracks in a cloud chamber, particle accelerator tunnel, particle collision detector image, electron cloud of an atom, quantum computer cryostat, double-slit interference pattern, Cherenkov glow in a reactor]
+    atoms and molecules: [DNA double helix, ball-and-stick molecular model, hydrogen bonds between water molecules, crystal lattice structure, atomic model with electron shells, 3D protein structure, carbon nanotube]
+    crystals and minerals: [amethyst geode, snowflake crystal, cubic pyrite crystals, rough and cut gemstones, polarized micrograph of a rock thin section, salt crystals, agate cross-section]
+    metals: [flowing molten iron, rust-covered iron plate, polished copper surface, gold nugget, mercury droplets, flying welding sparks, bronze covered in verdigris]
+    fluid phenomena: [crown splash of a water drop, swirling water vortex, soap bubble film, ink spreading in water, round water drop on a leaf, trailing smoke, boiling bubbles]
+    light and waves: [light split by a prism, thin-film interference colors, caustics on a pool floor, laser beam, ripples spreading on water, stress patterns in polarized light, light in optical fibers]
+    chemical reactions and combustion: [candle flame, color change in a test tube, flame test colors, explosion fireball, glowing chemiluminescent liquid, crystals precipitating from solution]
+    cells and microstructures: [dividing cell, neuron network, red blood cells, virus particles, electron micrograph of pollen, leaf stomata]
+    material textures: [wood grain, woven fabric texture, washi paper fibers, marble veining, concrete surface, grained leather]
+
+  "3_earth_water_and_air":
+    _tags: [outdoor, seasonal]
+    _weight: 10
+    mountains and highlands: [snow-capped peak, rocky ridge, table mountain plateau, glacier-carved U-shaped valley, alpine flower meadow, mist-shrouded mountain range, karst landscape of strange peaks, red rock canyon, limestone pinnacles, sea of clouds seen from a summit]
+    plains and deserts: [rippled sand dunes, rocky desert, savanna, endless grassland, tundra, white salt flat, cracked drought-stricken ground, desert oasis, mesa and butte badlands]
+    forest landscapes: [rainforest canopy, misty cloud forest, snow-covered conifer forest, bamboo grove, autumn mountain forest, mangrove forest, sun-dappled broadleaf forest, mossy old-growth forest, forest regrowing after fire]
+    oceans and coasts: [big open-ocean swell, shallow coral reef, sea cliffs, white sand beach, tidal flat, sea cave and sea stack, rough winter sea, foam at the water's edge, fjord]
+    inland waters: [meandering great river, mountain stream, tall waterfall, mirror-like mountain lake, marshland, river delta, spring welling from the ground, snowmelt brook, confluence of two rivers]
+    ice snow and polar regions: [iceberg, blue glacier ice, vast snowfield, icicles, rime-covered trees, drift ice, glacier cave, frozen waterfall, snowfield in polar night]
+    volcanoes and crust: [erupting volcano, flowing lava, solidified lava plateau, geyser, fumarole with yellow sulfur, steaming hot spring, surface fault offset, caldera lake, columnar basalt]
+    underground and caves: [limestone cave, lava tube, underground lake, exposed rock strata, light streaming into a cave mouth, giant sinkhole, giant crystal cave, underground river, tree roots hanging from a cave ceiling]
+    weather: [cumulonimbus cloud, mackerel sky, summer downpour, lightning strike, dense fog, tornado, blizzard, typhoon storm, hailstorm]
+    atmospheric optics: [sunset glow, noctilucent clouds, rainbow, aurora, mirage, crepuscular rays, solar halo, Brocken spectre, green flash]
+    natural disasters: [flood, wildfire, landslide, tsunami, town collapsed by an earthquake, town buried in volcanic ash, avalanche, sandstorm, storm surge]
+
+  "4_life":
+    _tags: [outdoor, seasonal]
+    _weight: 16
+    microbes and plankton: [diatoms, water flea, paramecium, amoeba, euglena, radiolarian, sea sparkle bloom, bacterial colonies in a petri dish, tardigrade, volvox, foraminifera]
+    fungi and lichens: [fly agaric mushroom, bracket fungus, glowing mushrooms, slime mold plasmodium, mold on bread, lichen on rock, mycelium network, cordyceps fungus, puffball, truffle, morel]
+    algae mosses and ferns: [giant kelp forest, seaweed on rocks, seaweed washed ashore, filamentous green algae, haircap moss, liverwort, fern fiddlehead unfurling, tree fern, horsetail, luminous moss, spikemoss]
+    flowers and herbs: [sunflower, dandelion, lotus, orchid, cactus flower, rafflesia, tulip, alpine bleeding heart, weed in a pavement crack, venus flytrap, silver grass]
+    trees: [cherry blossom tree, baobab, millennia-old giant tree, red maple in autumn, white birch, palm tree, bonsai, dead standing tree, banyan aerial roots, willow, ancient olive tree]
+    cultivated plants and crops: [rice ears, wheat, corn, grape cluster, tea plantation, coffee cherries, apple tree, cacao pods, cabbage field, chili peppers, cotton bolls]
+    insects and spiders: [rhinoceros beetle, swallowtail butterfly, honeybee, line of marching ants, dragonfly, praying mantis, cicada emerging from its shell, firefly, spider spinning a web, scorpion, ladybug]
+    other invertebrates: [octopus, squid, jellyfish, starfish, sea urchin, snail, hermit crab, lobster, sea anemone, earthworm, sea slug]
+    fish: [shark, school of tuna, koi carp, goldfish, anglerfish, seahorse, clownfish, ray, salmon swimming upstream, pufferfish, piranha]
+    amphibians and reptiles: [tree frog, poison dart frog, giant salamander, sea turtle, tortoise, crocodile, chameleon, cobra, python, iguana, gecko]
+    birds: [eagle, owl, penguin, flamingo, hummingbird, peacock, crane, sparrow, crow, ostrich]
+    wild mammals: [lion, tiger, elephant, giraffe, gorilla, polar bear, whale, dolphin, bat, kangaroo]
+    livestock and pets: [dog, cat, cow, horse, sheep, pig, chicken, rabbit, hamster, camel]
+    extinct life and fossils: [tyrannosaurus, triceratops, pteranodon, plesiosaur, mammoth, trilobite, ammonite, insect trapped in amber, dodo, dinosaur skeleton display]
+    ecology and interactions: [predator pouncing on prey, chicks waiting for food in a nest, great wildebeest migration, seabirds diving into a fish school, cleaner fish cleaning a large fish, tree covered by parasitic plants, vultures gathering at a carcass, insect camouflaged as a twig, animal parent protecting its young, males fighting over territory]
+
+  "5_human_body_and_mind":
+    _tags: [outdoor, cultural]
+    _weight: 9
+    faces and expressions: [beaming smile, face with tears, furious expression, surprised face, sleeping face, deeply wrinkled face, silhouetted profile, pensive face, blushing face, screaming face]
+    body parts: [palm of a hand, close-up of an eye, bare feet, long hair, back, lips, ear, fingertips, muscular arm, pregnant belly]
+    life stages: [newborn baby, crawling baby, toddler taking first steps, schoolchild, adolescent, person in their twenties, middle-aged person, elderly person, centenarian, elderly couple leaning on each other]
+    human diversity: [wheelchair user, person with a white cane, athlete with a prosthetic leg, people talking in sign language, child with Down syndrome, person with albinism, plus-size person, person with dwarfism, people of diverse skin tones, person wearing a hearing aid]
+    movements and postures: [all-out sprint, leap, lying down, sitting cross-legged, handstand, stretching, carrying a heavy load, crouching, reaching out, looking back over the shoulder]
+    emotions: [people hugging in joy, person collapsing in tears, person throwing things in anger, person cowering in fear, loneliness in a crowd, person biting nails anxiously, person sinking down in relief, person covering face in embarrassment, jealous glare, person reminiscing over an old photo]
+    health illness and medicine: [stethoscope examination, operating room, patient on an IV drip, rehabilitation, vaccination, dental treatment, caring for someone sick in bed, emergency transport, mixing herbal medicine, child in bed with a fever]
+    adornment and body expression: [nail art, traditional tattoo, henna tattoo, piercings, dreadlocks, body paint, kabuki face makeup, stacked brass neck rings, groomed beard, shaved head]
+    inner life and consciousness: [person dreaming, daydreaming child, fragments of memory, moment of inspiration, person lost at a crossroads, determined expression, person tormented by a nightmare, person in deep concentration, sleepless night, person lost in thought by a window]
+
+  "6_human_activities":
+    _tags: [outdoor, seasonal, cultural]
+    _weight: 14
+    home and daily life: [getting ready in the morning, hanging laundry, vacuuming, family time together, changing a diaper, putting a child to bed, parent helping with homework, packing to move, gardening, walking the dog]
+    meals and cooking scenes: [chopping vegetables, tossing a wok, kneading bread dough, eating at a street stall, family dinner, large banquet, eating alone, eating with hands, barbecue, opening a lunch box at noon]
+    work and occupations: [office meeting, factory assembly line, firefighter, construction worker, blacksmith, parcel delivery worker, hairdresser, chef in a kitchen, cleaner, remote work from home]
+    farming forestry and fishing: [rice planting, rice harvest, plowing with a tractor, fruit picking, milking a cow, sheep shearing, felling a tree, fishermen hauling a net, free-diving shell diver, aquaculture raft]
+    education and learning: [lesson at a blackboard, science experiment, studying in a library, graduation ceremony, open-air classroom, music lesson, online class, exam hall, museum visit, master passing skills to an apprentice]
+    trade and economy: [morning market, fish market auction, supermarket checkout, floating market, street vendor, antique market, stock exchange, shopping street, barter, shop with a long queue]
+    transit and travel: [crowded station platform, airport departure lounge, backpacker, packed commuter train, traffic jam, hitchhiking, desert caravan, ship's deck, overnight bus, traveler unfolding a map]
+    sports: [soccer, basketball, sumo, boxing, marathon, competitive swimming, ski jumping, surfing, gymnastics, cricket]
+    play entertainment and hobbies: [children on playground equipment, elders playing Go, karaoke, river fishing, knitting, movie theater, person absorbed in a video game, stargazing, camping, photography]
+    festivals and annual events: [fireworks festival, portable shrine procession, carnival parade, lantern festival, spring festival of colored powder, Day of the Dead altar, Christmas market, lunar new year lion dance, harvest festival, Halloween costumes]
+    religious rites and ceremonies: [church wedding, Shinto wedding, Indian wedding, funeral, cremation, prayer at a mosque, sutra chanting at a temple, baptism, crowd of pilgrims, visiting a family grave]
+    politics and assemblies: [polling station, street speech, protest march, parliamentary debate, press conference, petition drive, international summit, protest sit-in, election poster board, coronation]
+    conflict and crime: [soldiers on a battlefield, trench, fistfight, crime scene investigation, moment of arrest, prison cell, line of refugees, gymnasium evacuation shelter, medieval battle, burglary]
+    social interaction and relationships: [chatting with friends, couple holding hands, farewell at a station, reunion hug, handshake, couple arguing, video call, whispering, bowing in greeting, confession of love]
+
+  "7_artifacts":
+    _tags: [outdoor, seasonal, cultural]
+    _weight: 18
+    dishes food and drinks: [sushi, ramen, curry, pizza, tacos, soup dumplings, injera, croissant, decorated cake, jollof rice, matcha, coffee]
+    tools: [hammer, saw, screwdriver, scissors, kitchen knife, fountain pen, drawing compass, hoe, axe, whetstone, sewing kit, balance scale]
+    household goods furniture and appliances: [chair, sofa, bed, lamp, ceramic tableware, refrigerator, washing machine, electric fan, umbrella, mirror, wall clock, pots and pans]
+    clothing shoes and accessories: [kimono, sari, dashiki, suit, jeans, sneakers, high heels, straw hat, necklace, wristwatch, school uniform, wool gloves]
+    electronics: [smartphone, laptop, CRT television, circuit board, tangled cables, home game console, headphones, digital camera, radio, server room, calculator]
+    machinery and industrial equipment: [gears, industrial robot arm, steam engine, wind turbine, solar panels, steel mill blast furnace, oil pumpjack, tower crane, excavator, rotary printing press, automatic loom]
+    land vehicles: [bicycle, motorcycle, passenger car, truck, city bus, high-speed train, steam locomotive, tram, auto rickshaw, horse-drawn carriage, pulled rickshaw]
+    ships and boats: [sailing ship, canoe, yacht, fishing boat, container ship, oil tanker, cruise liner, submarine, gondola, dhow, roofed pleasure boat]
+    aircraft: [passenger jet, fighter jet, helicopter, hot-air balloon, glider, biplane, airship, drone, seaplane, paraglider, cargo plane]
+    dwellings and interiors: [tatami room, living room, kitchen, children's room, study, bathroom, garage, attic, inside a nomad's tent, basement, dormitory bunk beds]
+    buildings: [Gothic cathedral, pagoda, mosque dome, pyramid, castle, skyscraper, traditional wooden house, thatched-roof house, mud-brick house, lighthouse, amphitheater]
+    cities and infrastructure: [scramble crossing, highway interchange, suspension bridge, dam, transmission tower, subway station, container terminal, city at night, back alley, sewer, water tower]
+    weapons and armor: [katana, knight's armor, bow and arrows, shield, spear, cannon, musket, tank, catapult, boomerang, samurai armor]
+    musical instruments: [piano, violin, guitar, taiko drum, drum kit, shamisen, sitar, djembe, trumpet, bagpipes, synthesizer]
+    toys and games: [teddy bear, wooden blocks, plastic building bricks, kite, spinning top, kendama, 3D puzzle, chessboard, playing cards, marbles, fashion doll]
+    ruins debris and waste: [abandoned factory, shipwreck, garbage heap, rusted abandoned car, abandoned railway line, abandoned hospital, crumbling ancient ruins, beach litter, e-waste, derelict amusement park, crashed airplane wreckage]
+
+  "8_representations_and_symbols":
+    _tags: [cultural]
+    _weight: 9
+    writing and calligraphy: [brush calligraphy, letterpress type, neon sign lettering, graffiti on a wall, cuneiform clay tablet, hieroglyphs, Arabic calligraphy, handwritten note, braille, shop signboard]
+    numbers formulas and geometry: [equations on a chalkboard, regular polyhedra, fractal figure, golden spiral, Möbius strip, digits of pi, ruler-and-compass construction, sudoku, magic square, knot diagram]
+    signs symbols and icons: [road sign, emergency exit pictogram, fluttering flag, traffic light, information signboard, map symbols, emoji, road markings, hazard warning symbol, family crest]
+    maps and drawings: [antique map, globe, subway route map, architectural blueprint, treasure map, nautical chart, contour topographic map, machine blueprint, planisphere, hand-drawn directions]
+    charts and graphs: [bar chart, pie chart, line graph, flowchart, organization chart, phylogenetic tree, periodic table, Venn diagram, infographic, Gantt chart]
+    documents and screens: [contract, letter and envelope, newspaper page, receipt, ancient scroll document, timetable, smartphone chat screen, web page, error screen, restaurant menu]
+    artworks: [classical oil portrait, Buddha statue, ancient marble sculpture, cave painting, abstract painting, ceramic vase, folding screen painting, dot painting, contemporary art installation, carved wooden mask]
+    patterns and motifs: [arabesque scroll pattern, checkered pattern, Islamic geometric pattern, camouflage pattern, leopard print, paisley, tartan, kente cloth pattern, seigaiha wave pattern, stripes]
+    religious and magical symbols: [mandala, cross, talisman, totem pole, dreamcatcher, tree of life motif, bagua eight trigrams, blue evil eye charm, torii gate, altar offerings]
+
+  "9_otherworlds_and_imagination":
+    _tags: [outdoor]
+    _weight: 8
+    mythical creatures: [Eastern dragon, Western dragon, qilin, mermaid, phoenix, unicorn, griffin, three-headed guard dog, kraken]
+    gods spirits and yokai: [thunder god, forest spirit, tsukumogami, angel, demon, kappa, nine-tailed fox, genie of the lamp, water spirit]
+    fictional humanoid races: [elf, dwarf, orc, android, gray alien, giant, small winged fairy, vampire, zombie]
+    fictional civilizations and cities: [city floating in the sky, underwater city, academy of magic, village atop a giant tree, steampunk city, phantom desert kingdom, temple above the clouds, subterranean kingdom, walking fortress city]
+    alien environments: [wasteland under two setting suns, forest made of crystal, jungle of glowing plants, forest of giant mushrooms, methane sea, floating rock mountains, sky crossed by giant rings, purple sea and sky, subsurface ocean of an ice planet]
+    impossible objects and illusions: [Penrose triangle, endless staircase, impossible cube, Rubin's vase, rotating spiral illusion, perpetual waterfall channel, Ames room, trompe-l'oeil street with warped perspective, ambiguous figure]
+    surreal spaces: [melting clock, room floating in the sky, sea filling a room, staircase floating in the sky, landscape with a giant eye, furniture made of clouds, upside-down city, sky inside a birdcage, piano in the desert]
+    hybrids and anthropomorphism: [mechanical animal, human fused with plants, anthropomorphic tool, animal walking in clothes, chimera, walking house, sun with a face, human with an animal head, creature-like car]
+    futures and post-apocalypse: [ruined post-apocalyptic city, cyberpunk city at night, green solarpunk city, Mars terraforming base, home with a humanoid robot, city with flying cars, nuclear winter wasteland, flooded future city]

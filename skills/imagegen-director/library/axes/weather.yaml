@@ -1,0 +1,10 @@
+# Library axis: weather. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Weather. Restrict with applies_to to outdoor subjects.
+values:
+  unspecified (e.g. indoors): 5
+  clear: 3
+  rain: 2
+  snow: 1
+  fog or mist: 1
+  strong wind or dust: 1

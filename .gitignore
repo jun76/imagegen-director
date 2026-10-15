@@ -1,0 +1,10 @@
+# machine-specific paths (copy examples/backends/local_paths.example.json)
+local_paths.json
+
+# per-project generated files
+results/
+.batch.lock
+out/scenarios*.jsonl
+
+__pycache__/
+*.pyc

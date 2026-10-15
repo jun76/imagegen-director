@@ -1,0 +1,10 @@
+{
+  "iris_python": "/path/to/iris-venv/bin/python",
+  "iris_source": "/path/to/iris-3b-turbo",
+  "iris_models_dir": "/path/to/models/iris-3b",
+  "unsloth_url": "http://127.0.0.1:8888",
+  "unsloth_api_key_file": "/path/to/file-containing-only-the-unsloth-api-key",
+  "unsloth_turbo_dir": "/server/path/to/Qwen-Image-2.1-Turbo-GGUF/Q8_0",
+  "unsloth_models_dir": "/server/path/to/models",
+  "comfy_url": "http://127.0.0.1:8000"
+}

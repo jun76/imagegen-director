@@ -1,0 +1,12 @@
+# Library axis: angle. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Camera viewpoint.
+values:
+  eye level: 5
+  high angle: 2
+  directly overhead: 2
+  low angle: 2
+  side view: 2
+  from behind: 1
+  first-person view: 1
+  tilted or dutch angle: 1

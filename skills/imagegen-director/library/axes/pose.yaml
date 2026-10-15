@@ -1,0 +1,13 @@
+# Library axis: pose. Copy into a project's axes.yaml and adapt values and weights.
+description: Body pose of a character.
+values:
+  standing relaxed: 3
+  walking: 2
+  running: 1
+  sitting: 2
+  jumping: 1
+  arms crossed: 1
+  waving: 1
+  looking back over the shoulder: 1
+  crouching: 1
+  lying down: 1

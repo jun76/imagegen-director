@@ -1,0 +1,16 @@
+# "the-world": a broad, general-purpose image set (an attempt at 森羅万象), 1000 leaves x 10 variants.
+# Built for evaluating image search quality, and usable for training.
+# Schema: guides/schema.md
+
+name: the-world
+purpose: >
+  Search-quality evaluation (and training) set spread over a wide range of subjects:
+  abstract concepts, cosmos, matter, nature, life, people, activities, artifacts, symbols,
+  and imagined worlds, each varied along medium, framing, light, state, region and era.
+per_leaf: 10          # variants per leaf subject -> 1000 x 10 = 10000 prompts
+seed: 0
+beta: 0.2             # quota sensitivity of the sampler
+level_names: [l1, l2, l3]   # also write the path as l1/l2/l3 fields (dataset compatibility)
+id_width: 5
+scenario_prefix: "L4-"
+image: {width: 1024, height: 1024}

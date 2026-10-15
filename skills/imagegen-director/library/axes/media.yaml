@@ -1,0 +1,39 @@
+# Library axis: media. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: 'Medium / image type: photo genres, screens and documents, drawn and CG styles.'
+notes: 'The type of image. Usually the most important axis for search evaluation. Write the LOOK, never
+  the device: "professional photograph with shallow depth of field", not "DSLR photo" (models draw the
+  camera). Mark unique_per_leaf to keep variants of one subject in different media. For a single-style
+  project (anime, pixel art) make it a constant instead.'
+unique_per_leaf: true
+values:
+  DSLR photo: 10
+  smartphone snapshot: 10
+  product photo on white background: 4
+  documentary photo: 5
+  street snapshot: 4
+  security or dashcam still: 2
+  satellite or aerial photo: 2
+  micrograph or scientific image: 3
+  infrared thermal or X-ray image: 2
+  black-and-white or sepia old photo: 4
+  film or instant photo: 3
+  underwater photo: 2
+  screenshot: 3
+  scanned paper document: 3
+  encyclopedia or textbook illustration: 3
+  oil painting: 3
+  watercolor painting: 3
+  pencil or charcoal drawing: 2
+  pen and ink line drawing: 2
+  ink wash painting: 2
+  ukiyo-e or woodblock print: 2
+  child's drawing: 2
+  anime cel illustration: 3
+  manga panel: 2
+  flat vector illustration: 3
+  pixel art: 2
+  photorealistic 3D render: 3
+  low-poly toy 3D render: 2
+  clay diorama or miniature: 2
+  embroidery textile or stained glass: 2

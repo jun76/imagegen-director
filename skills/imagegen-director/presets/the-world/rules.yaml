@@ -1,0 +1,19 @@
+# Project rules of the "the-world" preset, checked by scripts/assemble.py on top of
+# library/rules/universal.yaml. Schema: guides/schema.md.
+
+overrides:
+  # Phones, cameras and screens are the subject itself for these leaves.
+  no-capture-device: {unless: {group: device-subjects}}
+
+rules:
+  - id: mass-sensitive-wording
+    description: >
+      Creatures and body parts that look repulsive in a mass must not be written as a mass,
+      even with count "a few". Attach body parts to people, never a heap of disembodied parts.
+    when: {group: mass-sensitive}
+    forbid: '\b(countless|many|crowd of|group of|a mass of|heaps? of|piles? of|clusters? of|school of|swarm|flock of|dozens)\b'
+
+  - id: mass-sensitive-count
+    description: Guard for axes.yaml subject_remaps; fires if the sampler ever gives these subjects a crowd.
+    when: {group: mass-sensitive}
+    deny_axes: {count: [crowd or many]}

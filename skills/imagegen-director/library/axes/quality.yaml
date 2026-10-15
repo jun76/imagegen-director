@@ -1,0 +1,13 @@
+# Library axis: quality. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Image degradation, for robustness evaluation.
+notes: Keep "clean" dominant. Stored as metadata so degraded images can be excluded from training.
+values:
+  clean: 12
+  noise or high ISO: 1
+  camera or motion blur: 1
+  out of focus: 1
+  low resolution or compression artifacts: 1
+  over- or underexposed: 1
+  tilted or rotated: 1
+  partly occluded: 1

@@ -1,0 +1,17 @@
+# Library axis: lighting. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Light source and quality.
+values:
+  sunny daylight: 4
+  soft overcast light: 3
+  sunrise or sunset: 2
+  blue hour: 1
+  artificial night lighting: 2
+  moonlight or darkness: 1
+  indoor fluorescent light: 2
+  natural window light: 2
+  studio lighting: 2
+  backlight or silhouette: 1
+  direct flash: 1
+  neon or colored light: 1
+  firelight or candlelight: 1

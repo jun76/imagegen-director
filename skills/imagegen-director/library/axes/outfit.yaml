@@ -1,0 +1,13 @@
+# Library axis: outfit. Copy into a project's axes.yaml and adapt values and weights.
+description: Clothing style of a character.
+notes: Keep it generic; never name brands or existing franchise costumes.
+values:
+  casual everyday clothes: 3
+  school uniform: 2
+  business suit: 1
+  traditional dress: 1
+  sportswear: 1
+  fantasy adventurer gear: 2
+  sci-fi suit: 1
+  winter coat: 1
+  pajamas: 1

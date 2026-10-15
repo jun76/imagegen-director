@@ -1,0 +1,17 @@
+# Library axis: state. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Life-cycle state or event, spreading one subject over its life cycle.
+notes: Phrase death and damage as traces and aftermath; avoid gore.
+values:
+  beginning or birth: 1
+  growing or under construction: 1
+  peak or complete: 3
+  still or at rest: 2
+  in motion: 2
+  interacting with others: 2
+  in use or at work: 2
+  decaying or weathered: 1
+  broken accident or disaster: 1
+  being repaired or maintained: 1
+  death remains or traces: 1
+  transforming: 1

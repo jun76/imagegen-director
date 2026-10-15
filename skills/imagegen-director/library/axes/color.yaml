@@ -1,0 +1,13 @@
+# Library axis: color. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Color treatment.
+notes: Conflicts with monochrome media; add exclusions.
+values:
+  natural color: 6
+  high saturation: 1
+  muted desaturated: 1
+  monochrome: 1
+  single dominant color: 1
+  pastel: 1
+  dark low-key: 1
+  bright high-key: 1

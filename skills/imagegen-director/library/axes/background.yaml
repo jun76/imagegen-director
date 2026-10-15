@@ -1,0 +1,9 @@
+# Library axis: background. Copy into a project's axes.yaml and adapt values and weights.
+description: Background treatment.
+notes: For assets, a constant like "plain flat background, subject isolated" is usually better than an
+  axis.
+values:
+  plain flat background: 3
+  simple gradient background: 1
+  blurred environment: 2
+  detailed environment: 2

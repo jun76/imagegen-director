@@ -1,0 +1,11 @@
+# Library axis: shot_scale. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Distance to the subject / size in frame.
+values:
+  vast (horizon or starfield): 2
+  wide establishing view: 3
+  full view: 4
+  medium view: 4
+  close-up: 3
+  extreme close-up or macro: 2
+  cropped detail: 2

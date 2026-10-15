@@ -1,0 +1,10 @@
+# Library axis: count. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Number of subjects, for counting-type queries.
+notes: Image models render "many" as a frame filled edge to edge. For creatures and body parts remap "crowd
+  or many" with subject_remaps, and never write "countless".
+values:
+  single: 5
+  two: 2
+  a few: 2
+  crowd or many: 2

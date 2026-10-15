@@ -1,0 +1,9 @@
+# Library axis: season. Copy into a project's axes.yaml and adapt values and weights.
+# Weights are relative; the defaults are those of the the-world preset.
+description: Season. Restrict with applies_to to subjects where it shows.
+values:
+  unspecified: 4
+  spring: 1
+  summer: 1
+  autumn: 1
+  winter: 1
